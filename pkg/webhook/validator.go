@@ -982,12 +982,12 @@ func (v *Validator) ResolvePodScalable(ctx context.Context, ps *policyduckv1beta
 	for _, s := range ps.Spec.Template.Spec.ImagePullSecrets {
 		imagePullSecrets = append(imagePullSecrets, s.Name)
 	}
-	opt := k8schain.Options{
-		Namespace:          getNamespace(ctx, ps.Namespace),
-		ServiceAccountName: ps.Spec.Template.Spec.ServiceAccountName,
-		ImagePullSecrets:   imagePullSecrets,
-	}
-	v.resolvePodSpec(ctx, &ps.Spec.Template.Spec, opt)
+// 	opt := k8schain.Options{
+// 		Namespace:          getNamespace(ctx, ps.Namespace),
+// 		ServiceAccountName: ps.Spec.Template.Spec.ServiceAccountName,
+// 		ImagePullSecrets:   imagePullSecrets,
+// 	}
+// 	v.resolvePodSpec(ctx, &ps.Spec.Template.Spec, opt)
 }
 
 // ResolvePodSpecable implements duckv1.PodSpecValidator
@@ -1002,12 +1002,12 @@ func (v *Validator) ResolvePodSpecable(ctx context.Context, wp *duckv1.WithPod) 
 	for _, s := range wp.Spec.Template.Spec.ImagePullSecrets {
 		imagePullSecrets = append(imagePullSecrets, s.Name)
 	}
-	opt := k8schain.Options{
-		Namespace:          getNamespace(ctx, wp.Namespace),
-		ServiceAccountName: wp.Spec.Template.Spec.ServiceAccountName,
-		ImagePullSecrets:   imagePullSecrets,
-	}
-	v.resolvePodSpec(ctx, &wp.Spec.Template.Spec, opt)
+// 	opt := k8schain.Options{
+// 		Namespace:          getNamespace(ctx, wp.Namespace),
+// 		ServiceAccountName: wp.Spec.Template.Spec.ServiceAccountName,
+// 		ImagePullSecrets:   imagePullSecrets,
+// 	}
+// 	v.resolvePodSpec(ctx, &wp.Spec.Template.Spec, opt)
 }
 
 // ResolvePod implements duckv1.PodValidator
@@ -1021,12 +1021,12 @@ func (v *Validator) ResolvePod(ctx context.Context, p *duckv1.Pod) {
 	for _, s := range p.Spec.ImagePullSecrets {
 		imagePullSecrets = append(imagePullSecrets, s.Name)
 	}
-	opt := k8schain.Options{
-		Namespace:          getNamespace(ctx, p.Namespace),
-		ServiceAccountName: p.Spec.ServiceAccountName,
-		ImagePullSecrets:   imagePullSecrets,
-	}
-	v.resolvePodSpec(ctx, &p.Spec, opt)
+// 	opt := k8schain.Options{
+// 		Namespace:          getNamespace(ctx, p.Namespace),
+// 		ServiceAccountName: p.Spec.ServiceAccountName,
+// 		ImagePullSecrets:   imagePullSecrets,
+// 	}
+// 	v.resolvePodSpec(ctx, &p.Spec, opt)
 }
 
 // ResolveCronJob implements duckv1.CronJobValidator
@@ -1041,12 +1041,12 @@ func (v *Validator) ResolveCronJob(ctx context.Context, c *duckv1.CronJob) {
 	for _, s := range c.Spec.JobTemplate.Spec.Template.Spec.ImagePullSecrets {
 		imagePullSecrets = append(imagePullSecrets, s.Name)
 	}
-	opt := k8schain.Options{
-		Namespace:          getNamespace(ctx, c.Namespace),
-		ServiceAccountName: c.Spec.JobTemplate.Spec.Template.Spec.ServiceAccountName,
-		ImagePullSecrets:   imagePullSecrets,
-	}
-	v.resolvePodSpec(ctx, &c.Spec.JobTemplate.Spec.Template.Spec, opt)
+// 	opt := k8schain.Options{
+// 		Namespace:          getNamespace(ctx, c.Namespace),
+// 		ServiceAccountName: c.Spec.JobTemplate.Spec.Template.Spec.ServiceAccountName,
+// 		ImagePullSecrets:   imagePullSecrets,
+// 	}
+// 	v.resolvePodSpec(ctx, &c.Spec.JobTemplate.Spec.Template.Spec, opt)
 }
 
 // For testing
