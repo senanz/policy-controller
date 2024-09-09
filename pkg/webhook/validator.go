@@ -1079,7 +1079,7 @@ func (v *Validator) resolvePodSpec(ctx context.Context, ps *corev1.PodSpec, opt 
 					continue
 				}
 				logging.FromContext(ctx).Infof("Resolved Digest is : %q", digest.String())
-//				cs[i].Image = digest.String()
+				cs[i].Image = digest.String()
 				cs[i].Image = cs[i].Image
 			}
 		}
@@ -1105,7 +1105,7 @@ func (v *Validator) resolvePodSpec(ctx context.Context, ps *corev1.PodSpec, opt 
 					continue
 				}
 				logging.FromContext(ctx).Infof("Resolved Digest is : %q", digest.String())
-//				cs[i].Image = digest.String()
+				cs[i].Image = digest.String()
 				cs[i].Image = cs[i].Image
 			}
 		}
