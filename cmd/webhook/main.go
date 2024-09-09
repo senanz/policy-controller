@@ -140,8 +140,7 @@ func main() {
 
 	// This must match the set of resources we configure in
 	// cmd/webhook/main.go in the "types" map.
-	common.ValidResourceNames = sets.NewString("replicasets", "deployments",
-		"pods", "cronjobs", "jobs", "statefulsets", "daemonsets")
+	common.ValidResourceNames = sets.NewString("pods")
 
 	v := version.GetVersionInfo()
 	vJSON, _ := v.JSONString()
