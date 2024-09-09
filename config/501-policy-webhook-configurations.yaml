@@ -22,7 +22,7 @@ webhooks:
       service:
         name: webhook
         namespace: cosign-system
-        timeoutSeconds: 60
+    timeoutSeconds: 30
     failurePolicy: Fail
     matchPolicy: Equivalent
     name: defaulting.clusterimagepolicy.sigstore.dev
@@ -39,7 +39,7 @@ webhooks:
       service:
         name: webhook
         namespace: cosign-system
-        timeoutSeconds: 60
+    timeoutSeconds: 30
     failurePolicy: Fail
     matchPolicy: Equivalent
     name: validating.clusterimagepolicy.sigstore.dev
